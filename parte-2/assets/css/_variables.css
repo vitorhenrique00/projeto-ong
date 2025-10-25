@@ -1,0 +1,51 @@
+/* =========================================
+   1. DESIGN SYSTEM (Obrigatório)
+   Paleta, Tipografia, Espaçamento
+   ========================================= */
+
+:root {
+  /* Paleta de Cores (8+ cores) */
+  --color-primary: #007BFF;
+  --color-primary-dark: #0056b3;
+  --color-secondary: #6c757d;
+  --color-accent: #28a745;
+  --color-accent-light: #d4edda;
+  --color-danger: #dc3545;
+  --color-danger-light: #f8d7da;
+  --color-warning: #ffc107;
+  --color-text: #343a40;
+  --color-text-light: #6c757d;
+  --color-neutral-light: #f8f9fa;
+  --color-neutral-dark: #343a40;
+  --color-white: #ffffff;
+  --color-border: #dee2e6;
+
+  /* Tipografia (5+ tamanhos) */
+  --font-primary: 'Arial', sans-serif;
+  --font-size-xs: 0.75rem;  /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem;   /* 16px */
+  --font-size-md: 1.25rem;  /* 20px */
+  --font-size-lg: 1.5rem;   /* 24px */
+  --font-size-xl: 2rem;     /* 32px */
+  --font-size-xxl: 2.5rem;  /* 40px */
+  
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Sistema de Espaçamento Modular */
+  --spacing-1: 0.5rem;  /* 8px */
+  --spacing-2: 1rem;    /* 16px */
+  --spacing-3: 1.5rem;  /* 24px */
+  --spacing-4: 2rem;    /* 32px */
+  --spacing-5: 3rem;    /* 48px */
+  --spacing-6: 4rem;    /* 64px */
+
+  /* Outros */
+  --border-radius: 0.5rem; /* 8px */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+  --container-width: 1200px;
+}
+

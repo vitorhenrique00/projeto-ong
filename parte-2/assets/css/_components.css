@@ -1,0 +1,171 @@
+/* =========================================
+   5. COMPONENTES (Cards, Botões, Alerts, Modal, Badges)
+   ========================================= */
+
+/* Botões (com estados) */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-neutral-dark);
+}
+
+/* Estados */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.btn:active {
+  transform: translateY(2px);
+}
+
+.btn:disabled {
+  background-color: var(--color-secondary);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Cards (para projetos) */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-color: var(--color-white);
+  overflow: hidden;
+  height: 100%; /* Para alinhar em grids */
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz o conteúdo crescer */
+}
+
+.card-content h3 {
+  margin-bottom: var(--spacing-2);
+  color: var(--color-primary);
+}
+
+.card-content p {
+  margin-bottom: var(--spacing-3);
+  flex-grow: 1; /* Empurra o botão para baixo */
+}
+
+/* Badges e Tags */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-1) var(--spacing-2);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.badge-accent {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.badge-warning {
+  background-color: var(--color-warning);
+  color: var(--color-text);
+}
+
+/* Alertas (Feedback) */
+.alert {
+  padding: var(--spacing-3);
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  margin-bottom: var(--spacing-3);
+}
+
+.alert-success {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.alert-danger {
+  background-color: var(--color-danger-light);
+  border-color: var(--color-danger);
+  color: var(--color-text);
+}
+
+/* Modal (Feedback) */
+.modal-overlay {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--color-white);
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--spacing-2);
+  right: var(--spacing-2);
+  font-size: var(--font-size-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+

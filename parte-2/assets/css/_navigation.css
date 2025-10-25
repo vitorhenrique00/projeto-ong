@@ -1,0 +1,113 @@
+/* =========================================
+   4. NAVEGAÇÃO (Menu, Dropdown, Hambúrguer)
+   ========================================= */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-logo {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+/* Menu Desktop (Flexbox) */
+.nav-menu {
+  display: none; /* Escondido em mobile */
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: var(--color-neutral-light);
+  color: var(--color-primary);
+}
+
+/* Dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  min-width: 200px;
+  z-index: 1001;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: var(--spacing-2);
+  transition: var(--transition);
+}
+
+.dropdown-content a:hover {
+  background-color: var(--color-neutral-light);
+}
+
+/* Menu Hambúrguer (Mobile) */
+.hamburger-menu {
+  display: block; /* Visível em mobile */
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: var(--font-size-lg);
+}
+
+/* Menu Mobile (Slide-in) */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Começa fora da tela */
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: var(--color-white);
+  box-shadow: var(--box-shadow);
+  z-index: 1002;
+  transition: left 0.3s ease-in-out;
+  padding: var(--spacing-4);
+  
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.mobile-nav.active {
+  left: 0; /* Aparece na tela */
+}
+
+.mobile-nav .nav-link {
+  display: block;
+  font-size: var(--font-size-md);
+}
+
+.mobile-nav-close {
+  position: absolute;
+  top: var(--spacing-2);
+  right: var(--spacing-2);
+  font-size: var(--font-size-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+

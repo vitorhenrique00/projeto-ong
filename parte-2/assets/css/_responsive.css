@@ -1,0 +1,58 @@
+/* =========================================
+   7. RESPONSIVIDADE (5+ Breakpoints)
+   ========================================= */
+
+/* Breakpoint 1: Small (sm) - 576px */
+@media (min-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-3);
+  }
+
+  /* Grid 12 colunas */
+  .col-sm-6 { grid-column: span 6; }
+  .col-sm-4 { grid-column: span 4; }
+  /* ... etc ... */
+}
+
+/* Breakpoint 2: Medium (md) - 768px */
+@media (min-width: 768px) {
+  /* Navegação */
+  .nav-menu {
+    display: flex; /* Mostra menu desktop */
+  }
+  .hamburger-menu {
+    display: none; /* Esconde menu hambúrguer */
+  }
+  .mobile-nav {
+    display: none; /* Esconde menu mobile */
+  }
+
+  /* Grid 12 colunas */
+  .col-md-8 { grid-column: span 8; }
+  .col-md-6 { grid-column: span 6; }
+  .col-md-4 { grid-column: span 4; }
+}
+
+/* Breakpoint 3: Large (lg) - 992px */
+@media (min-width: 992px) {
+  /* Grid 12 colunas */
+  .col-lg-8 { grid-column: span 8; }
+  .col-lg-6 { grid-column: span 6; }
+  .col-lg-4 { grid-column: span 4; }
+  .col-lg-3 { grid-column: span 3; }
+}
+
+/* Breakpoint 4: Extra Large (xl) - 1200px */
+@media (min-width: 1200px) {
+  /* Grid 12 colunas */
+  .col-xl-6 { grid-column: span 6; }
+  /* ... etc ... */
+}
+
+/* Breakpoint 5: Extra Extra Large (xxl) - 1400px */
+@media (min-width: 1400px) {
+   .container {
+     max-width: 1320px;
+   }
+}
+

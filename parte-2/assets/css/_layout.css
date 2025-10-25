@@ -1,0 +1,63 @@
+/* =========================================
+   3. LAYOUT (Grid Principal e Grid de 12 Colunas)
+   ========================================= */
+
+/* Layout Principal com CSS Grid */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+header {
+  grid-row: 1;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+main {
+  grid-row: 2;
+  padding: var(--spacing-4) 0;
+}
+
+footer {
+  grid-row: 3;
+  background-color: var(--color-neutral-dark);
+  color: var(--color-neutral-light);
+  padding: var(--spacing-4) var(--spacing-2);
+  text-align: center;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-2);
+}
+
+section {
+  padding: var(--spacing-5) 0;
+}
+
+section:nth-of-type(even) {
+  background-color: var(--color-neutral-light);
+}
+
+/* Sistema de Grid Customizado (12 Colunas) */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-3);
+}
+
+/* Colunas - mobile-first (por padrão, 12 colunas) */
+.col-12 { grid-column: span 12; }
+.col-8 { grid-column: span 12; }
+.col-6 { grid-column: span 12; }
+.col-4 { grid-column: span 12; }
+.col-3 { grid-column: span 12; }
+
+/* ... Breakpoints são definidos em _responsive.css ... */
+

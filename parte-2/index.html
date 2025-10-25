@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - Mãos que Ajudam</title>
+    <meta name="description" content="Organização Mãos que Ajudam, dedicada a projetos sociais e voluntariado.">
+
+    <!-- 
+      CSS (Obrigatório no <head>):
+      Carrega os estilos antes da página ser desenhada.
+      O caminho aponta para a pasta 'assets' que você criou.
+    -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+    <!-- Cabeçalho (com IDs para o JS) -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="nav-logo">Mãos que Ajudam</a>
+
+            <!-- Menu Desktop -->
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Início</a></li>
+                    <li class="nav-item"><a href="projetos.html" class="nav-link">Projetos</a></li>
+                    
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Doações</a>
+                        <div class="dropdown-content">
+                            <a href="projetos.html#doar">Como Doar</a>
+                            <a href="projetos.html#voluntario">Ser Voluntário</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item"><a href="cadastro.html" class="nav-link btn btn-primary">Cadastro</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botão Hambúrguer (Mobile) -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
+                &#9776; <!-- Símbolo de hambúrguer -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Mobile (Escondido por padrão) -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Fechar menu">&times;</button>
+        <ul>
+            <li class="nav-item"><a href="index.html" class="nav-link active">Início</a></li>
+            <li class="nav-item"><a href="projetos.html" class="nav-link">Projetos</a></li>
+            <li class="nav-item"><a href="projetos.html#doar" class="nav-link">Como Doar</a></li>
+            <li class="nav-item"><a href="projetos.html#voluntario" class="nav-link">Ser Voluntário</a></li>
+            <li class="nav-item"><a href="cadastro.html" class="nav-link">Cadastro</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main>
+
+        <!-- Secção Herói -->
+        <section id="hero" class="bg-light">
+            <div class="container grid-container">
+                <div class="col-lg-6 col-md-12 hero-content">
+                    <h1 class="font-size-xxl">Junte-se a nós. Mude uma vida.</h1>
+                    
+                    <!-- CORREÇÃO: "class" em vez de "class_" -->
+                    <p class="font-size-md text-secondary">A "Mãos que Ajudam" é uma organização sem fins lucrativos focada em criar um impacto real e duradouro na nossa comunidade. Cada gesto conta.</p>
+                    
+                    <a href="projetos.html" class="btn btn-primary btn-lg">Conheça os Projetos</a>
+                    <a href="cadastro.html" class="btn btn-secondary btn-lg">Seja Voluntário</a>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <!-- Imagem de Voluntários (Substitua pela sua imagem) -->
+                    <img src="assets/images/mãosqueajudamp3.png" 
+                         alt="Equipa de voluntários da organização Mãos que Ajudam"
+                         class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção Sobre (Grid de 12 colunas) -->
+        <section id="sobre">
+            <div class="container">
+                <div class="grid-container">
+                    <div class="col-lg-8 col-md-12">
+                        <h2>Sobre a Nossa Organização</h2>
+                        <p>Fundada em 2010, a "Mãos que Ajudam" nasceu do sonho de um pequeno grupo de amigos que queria fazer a diferença. Hoje, impactamos milhares de vidas através de programas de educação, alimentação e apoio a famílias carenciadas.</p>
+                        <p>A nossa missão é simples: estender a mão a quem mais precisa, com respeito, dignidade e transparência. Acreditamos que a mudança começa com a ação local.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <!-- Imagem Secundária (Substitua pela sua imagem) -->
+                        <img src="assets/images/mãosqueajudamsede.png" 
+                             alt="Criança a participar num dos nossos programas educativos"
+                             class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Secção Contato -->
+        <section id="contato">
+            <div class="container">
+                <div class="grid-container">
+                    <div class="col-md-6">
+                        <h2>Informações de Contato</h2>
+                        <address>
+                            <p><strong>Endereço:</strong> Rua das Causas, 123, 1000-001 Lisboa</p>
+                            <p><strong>Telefone:</strong> <a href="tel:+351210000000">(+351) 210 000 000</a></p>
+                            <p><strong>E-mail:</strong> <a href="mailto:info@maosqueajudam.pt">info@maosqueajudam.pt</a></p>
+                        </address>
+                        <p><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 9h às 18h.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mãos que Ajudam. Todos os direitos reservados.</p>
+            <p>Organização sem fins lucrativos.</p>
+        </div>
+    </footer>
+    
+    <!-- 
+      Modal (Pop-up de Boas-Vindas) 
+      (Este componente só existe na index.html)
+    -->
+    <div class="modal-overlay" id="welcome-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn" aria-label="Fechar modal">&times;</button>
+            <h2>Bem-vindo à Mãos que Ajudam!</h2>
+            <p>Ficamos felizes por ter você aqui. A sua visita é o primeiro passo para fazer a diferença.</p>
+            <p>Conheça os nossos projetos e veja como pode ajudar a transformar vidas.</p>
+            <a href="projetos.html" class="btn btn-primary">Ver Projetos</a>
+        </div>
+    </div>
+
+    <!-- 
+      JavaScript (Obrigatório no fim do <body>):
+      Carrega os scripts de interatividade (menu, modal) depois da página estar desenhada.
+      O caminho aponta para a pasta 'assets' que você criou.
+    -->
+    <script src="assets/js/main.js" defer></script>
+
+</body>
+</html>
+
