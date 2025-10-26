@@ -1,0 +1,98 @@
+/*
+ * MÓDULO: _layout.css
+ * Define a estrutura principal (Grid), o container, 
+ * header, footer e o grid de 12 colunas.
+ */
+
+/* Estrutura principal da página (CSS Grid) */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Cabeçalho, Conteúdo (flexível), Rodapé */
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+}
+
+/* Container (limita a largura do conteúdo) */
+.container {
+    max-width: 1200px;
+    width: 90%; /* Em ecrãs pequenos, ocupa 90% */
+    margin: 0 auto; /* Centra o container */
+}
+
+/* Cabeçalho e Rodapé */
+header {
+    background-color: var(--color-neutral-100);
+    border-bottom: 1px solid var(--color-neutral-300);
+    padding: var(--space-2) 0;
+    position: sticky; /* Menu fica fixo no topo */
+    top: 0;
+    z-index: 1000;
+}
+
+footer {
+    background-color: var(--color-neutral-800);
+    color: var(--color-neutral-300);
+    padding: var(--space-4) 0;
+    margin-top: var(--space-6);
+}
+
+/* Regra para centrar o texto do rodapé */
+footer .container {
+    text-align: center;
+}
+
+/* --- Sistema de Grid de 12 Colunas (Customizado) --- */
+.grid-container {
+    display: grid;
+    /* 12 colunas de tamanho igual (1fr) */
+    grid-template-columns: repeat(12, 1fr); 
+    gap: var(--space-3); /* Espaço entre as colunas */
+}
+
+/* * Classes das Colunas (Desktop - Large)
+ * Por padrão (mobile-first), todas as colunas ocupam 12/12
+ */
+
+/* Por padrão (mobile), todas as colunas ocupam 12/12 */
+.col-xs-12, .col-sm-6, .col-md-4, .col-md-6, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8 {
+    grid-column: span 12; /* Ocupa 12 colunas */
+}
+
+/* breakpoint-sm (small) - 600px */
+@media (min-width: 600px) {
+    .col-sm-6 { grid-column: span 6; } /* Ocupa 6 de 12 (metade) */
+}
+
+/* breakpoint-md (medium) - 768px */
+@media (min-width: 768px) {
+    .col-md-4 { grid-column: span 4; } /* Ocupa 4 de 12 (um terço) */
+    .col-md-6 { grid-column: span 6; } /* Ocupa 6 de 12 (metade) */
+}
+
+/* breakpoint-lg (large) - 992px */
+@media (min-width: 992px) {
+    .col-lg-3 { grid-column: span 3; }
+    .col-lg-4 { grid-column: span 4; }
+    .col-lg-5 { grid-column: span 5; }
+    .col-lg-6 { grid-column: span 6; }
+    .col-lg-7 { grid-column: span 7; }
+    .col-lg-8 { grid-column: span 8; }
+}
+
+/* Helpers de Layout */
+.bg-light {
+    background-color: var(--color-neutral-200);
+}
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+.rounded {
+    border-radius: var(--border-radius-md);
+}
+.shadow {
+    box-shadow: var(--box-shadow);
+}

@@ -1,0 +1,78 @@
+/*
+ * MÓDULO: _responsive.css
+ * Controla todos os nossos breakpoints (5+)
+ * para adaptar o layout a mobile, tablet e desktop.
+ * (Abordagem: Mobile First)
+ */
+
+/* --- 1. Breakpoint: Small (sm) @ 600px (Tablets Pequenos) --- */
+@media (min-width: 600px) {
+    /* (Já definido no _layout.css - .col-sm-6) */
+}
+
+
+/* --- 2. Breakpoint: Medium (md) @ 768px (Tablets) --- */
+@media (min-width: 768px) {
+    /* (Já definido no _layout.css - .col-md-*) */
+    
+    .hero-title {
+        font-size: var(--font-size-xxxl);
+    }
+}
+
+/* --- 3. Breakpoint: Large (lg) @ 992px (Desktops Pequenos) --- */
+@media (min-width: 992px) {
+    /* (Já definido no _layout.css - .col-lg-*) */
+
+    /* Esconde o menu hambúrguer */
+    .hamburger-menu {
+        display: none;
+    }
+    
+    /* Mostra o menu desktop */
+    .nav-menu {
+        display: block; /* (O padrão do <ul>) */
+    }
+
+    /* Esconde o menu mobile */
+    .mobile-nav {
+        display: none;
+    }
+}
+
+
+/* --- 4. Breakpoint: Extra-Large (xl) @ 1200px (Desktops) --- */
+@media (min-width: 1200px) {
+    /* (Nenhum específico, 1200px é o nosso container max-width) */
+}
+
+/* --- 5. Breakpoint: (EXTRA) Para Mobile Pequeno (xs) @ 480px --- */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--font-size-xxl);
+    }
+    .hero-subtitle {
+        font-size: var(--font-size-md);
+    }
+    .hero .btn {
+        display: block; /* Botões um em cima do outro */
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* --- Media Query Inversa: Esconder menus em Desktop --- */
+/* Esconde o menu desktop por padrão (Mobile First) */
+@media (max-width: 991.98px) {
+    .nav-menu {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block; /* Mostra o hambúrguer */
+    }
+    .mobile-nav {
+        display: block; /* Ativa o menu (mas está fora do ecrã) */
+    }
+}

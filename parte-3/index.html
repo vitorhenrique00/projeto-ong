@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Mãos que Ajudam - Projeto Solidário</title>
+
+    <!-- 
+      ATENÇÃO: Este é o ÚNICO ficheiro HTML.
+      O CSS e o JS são os mesmos da Parte 2 (dentro de /assets/).
+    -->
+
+    <!-- CSS (Tem de copiar a pasta 'assets/' da parte-2 para a parte-3) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JavaScript (O 'main.js' será novo, mas está no mesmo sítio) -->
+    <!-- 'defer' é importante para o SPA carregar o JS depois do HTML -->
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+    <!-- Cabeçalho (O mesmo da Parte 2) -->
+    <header>
+        <div class="container navbar">
+            <!-- 
+              Os links de navegação agora usam HASH (#)
+              Ex: #inicio, #projetos, #cadastro
+              Isto é o que permite ao nosso "Router" SPA funcionar sem recarregar a página.
+            -->
+            <a href="#inicio" class="nav-logo">Mãos que Ajudam</a>
+
+            <!-- Menu Desktop -->
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+                    
+                    <!-- Dropdown (agora também usa hash) -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Doações</a>
+                        <div class="dropdown-content">
+                            <a href="#projetos-doar">Como Doar</a>
+                            <a href="#projetos-voluntario">Ser Voluntário</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item"><a href="#cadastro" class="nav-link btn btn-primary">Cadastro</a></li>
+                </ul>
+            </nav>
+
+            <!-- Botão Hambúrguer (Mobile) (O mesmo da Parte 2) -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu">
+                &#9776; <!-- Símbolo de hambúrguer -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Mobile (Escondido por padrão) (O mesmo da Parte 2) -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Fechar menu">&times;</button>
+        <ul>
+            <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+            <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+            <li class="nav-item"><a href="#projetos-doar" class="nav-link">Como Doar</a></li>
+            <li class="nav-item"><a href="#projetos-voluntario" class="nav-link">Ser Voluntário</a></li>
+            <li class="nav-item"><a href="#cadastro" class="nav-link">Cadastro</a></li>
+        </ul>
+    </nav>
+
+    <!-- 
+      PONTO PRINCIPAL DA SPA: O "Root" (Raiz) da Aplicação.
+      Este <main> está vazio. O JavaScript vai "injetar" 
+      o conteúdo das páginas (Início, Projetos, Cadastro) aqui dentro.
+    -->
+    <main id="app-root">
+        <!-- O Conteúdo dinâmico (templates) será carregado aqui pelo JS -->
+    </main>
+
+    <!-- Rodapé (O mesmo da Parte 2) -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mãos que Ajudam. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- 
+      Modal (Opcional, O mesmo da Parte 2)
+      Podemos mantê-lo aqui, e o main.js pode continuar a controlá-lo.
+    -->
+    <div id="welcome-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <h2 class="h3">Bem-vindo(a) ao Mãos que Ajudam!</h2>
+            <p>Obrigado por visitar o nosso novo site. A sua ajuda pode mudar vidas.</p>
+            <button id="modal-close-btn" class="btn btn-primary">Explorar</button>
+        </div>
+    </div>
+
+</body>
+</html>

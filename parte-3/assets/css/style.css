@@ -1,0 +1,42 @@
+/*
+ * =========================================
+ * ARQUIVO PRINCIPAL DO CSS (O "CHEFE")
+ * =========================================
+ * Este ficheiro NÃO contém estilos.
+ * A sua ÚNICA função é importar os 7 "módulos" 
+ * pela ordem correta.
+ * =========================================
+ */
+
+/* 1. Reset (Limpa estilos do navegador) */
+@import "_reset.css";
+
+/* 2. Variáveis (O nosso Design System - Cores, Fontes, etc.) */
+@import "_variables.css";
+
+/* 3. Layout (Grid de 12 colunas, Header, Footer, etc.) */
+@import "_layout.css";
+
+/* 4. Navegação (Menu principal, Menu mobile, Dropdown) */
+@import "_navigation.css";
+
+/* 5. Componentes (Botões, Cards, Modals, Alerts, Tags) */
+@import "_components.css";
+
+/* 6. Formulários (Estilos do formulário de cadastro) */
+@import "_forms.css";
+
+/* 7. Responsividade (Media Queries / Breakpoints) */
+@import "_responsive.css";
+
+
+/* --- Estilos de Base (O único estilo que vive aqui) --- */
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-md);
+    line-height: 1.6;
+    color: var(--color-neutral-700);
+    background-color: var(--color-neutral-100);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

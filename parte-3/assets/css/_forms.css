@@ -1,0 +1,88 @@
+/*
+ * MÓDULO: _forms.css
+ * Estilos para o formulário de cadastro,
+ * incluindo a validação visual.
+ */
+
+.form-styled fieldset {
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--border-radius-md);
+    padding: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+.form-styled legend {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    padding: 0 var(--space-1);
+    margin-left: var(--space-2);
+}
+
+.form-group {
+    margin-bottom: var(--space-3);
+}
+
+.form-group label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-1);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    display: block;
+    width: 100%;
+    padding: var(--space-2);
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-md);
+    transition: var(--transition);
+}
+
+/* Feedback de Foco */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px #3498db30;
+}
+
+/* --- Validação Visual (HTML5) --- */
+
+/* Mensagem de erro (escondida por padrão) */
+.form-error {
+    display: none;
+    font-size: var(--font-size-xs);
+    color: var(--color-danger);
+    margin-top: var(--space-1);
+}
+
+/* * Quando o input é inválido E o utilizador
+ * já interagiu com ele (classe .invalid,
+ * adicionada pelo JS ou CSS :focus-within),
+ * mostramos o erro.
+ */
+.form-group.invalid input,
+input:invalid:focus { /* Validação nativa ao focar */
+    border-color: var(--color-danger);
+    background-color: #e74c3c10;
+}
+.form-group.invalid .form-error {
+    display: block; /* Mostra a mensagem de erro */
+}
+
+/* Checkbox */
+.form-group input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: var(--space-1);
+}
+
+/* Grid para formulários */
+.form-grid {
+    gap: var(--space-2);
+}
