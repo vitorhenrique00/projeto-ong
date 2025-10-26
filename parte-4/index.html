@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-pt"> <!-- Acessibilidade: Língua definida -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONG Mãos que Ajudam - Projeto Solidário</title>
+    
+    <meta name="description" content="Junte-se à nossa organização sem fins lucrativos. Seja voluntário ou doe para projetos de educação, saúde e alimentação.">
+
+    <!-- CSS (O 'style.css' da Parte 4, que contém o Modo Escuro) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JavaScript (O 'main.js' da Parte 4, com a lógica do tema) -->
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body class="theme-light"> <!-- Começa com o tema claro por padrão -->
+
+    <!-- Acessibilidade: Link para saltar para o conteúdo principal -->
+    <a href="#app-root" class="skip-link">Saltar para o Conteúdo</a>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container navbar">
+            <a href="#inicio" class="nav-logo">Mãos que Ajudam</a>
+
+            <!-- Menu Desktop -->
+            <nav class="nav-menu" aria-label="Navegação Principal">
+                <ul>
+                    <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+                    
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <!-- Acessibilidade: aria-haspopup e aria-expanded -->
+                        <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">Doações</a>
+                        <div class="dropdown-content">
+                            <a href="#projetos-doar">Como Doar</a>
+                            <a href="#projetos-voluntario">Ser Voluntário</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item"><a href="#cadastro" class="nav-link btn btn-primary">Cadastro</a></li>
+                </ul>
+            </nav>
+
+            <!-- 
+              NOVO NA PARTE 4: Botão de Tema (Modo Escuro / Alto Contraste)
+              (Acessibilidade: role="switch" e aria-checked)
+            -->
+            <div class="theme-switcher">
+                <span id="theme-label" class="theme-label">Modo Escuro</span>
+                <button id="theme-toggle" class="theme-toggle-switch" role="switch" aria-checked="false" aria-labelledby="theme-label">
+                    <span class="theme-toggle-slider"></span>
+                </button>
+            </div>
+
+            <!-- Botão Hambúrguer (Mobile) -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
+                &#9776; <!-- Símbolo de hambúrguer -->
+            </button>
+        </div>
+    </header>
+
+    <!-- Menu Mobile (Escondido por padrão) -->
+    <!-- Acessibilidade: role="dialog", aria-modal="true" -->
+    <nav class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-labelledby="mobile-nav-title">
+        <h2 id="mobile-nav-title" class="visually-hidden">Navegação Mobile</h2>
+        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Fechar menu de navegação">&times;</button>
+        <ul>
+            <li class="nav-item"><a href="#inicio" class="nav-link">Início</a></li>
+            <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+            <li class="nav-item"><a href="#projetos-doar" class="nav-link">Como Doar</a></li>
+            <li class="nav-item"><a href="#projetos-voluntario" class="nav-link">Ser Voluntário</a></li>
+            <li class="nav-item"><a href="#cadastro" class="nav-link">Cadastro</a></li>
+        </ul>
+    </nav>
+
+    <!-- 
+      PONTO PRINCIPAL DA SPA
+      Acessibilidade: role="main" para leitores de tela
+    -->
+    <main id="app-root" role="main">
+        <!-- O Conteúdo dinâmico (templates) será carregado aqui pelo JS -->
+    </main>
+
+    <!-- Rodapé -->
+    <footer role="contentinfo"> <!-- Acessibilidade: role="contentinfo" -->
+        <div class="container">
+            <p>&copy; 2025 Mãos que Ajudam. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal (Opcional) -->
+    <div id="welcome-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close" aria-label="Fechar modal">&times;</span>
+            <h2 id="modal-title" class="h3">Bem-vindo(a) ao Mãos que Ajudam!</h2>
+            <p>Obrigado por visitar o nosso novo site. A sua ajuda pode mudar vidas.</p>
+            <button id="modal-close-btn" class="btn btn-primary">Explorar</button>
+        </div>
+    </div>
+
+</body>
+</html>

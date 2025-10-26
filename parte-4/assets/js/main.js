@@ -1,26 +1,24 @@
 /*
  * =========================================
- * MÓDULO PRINCIPAL - ONG MÃOS QUE AJUDAM (PARTE 3)
+ * MÓDULO PRINCIPAL - ONG MÃOS QUE AJUDAM (PARTE 4)
  * =========================================
  * Este ficheiro controla:
  * 1. O Sistema de SPA (Router)
  * 2. As Templates de Página (HTML dinâmico)
  * 3. A Lógica de UI (Menu, Modal)
- * 4. A Validação Avançada de Formulários
+ * 4. A Lógica do TEMA (Modo Escuro / Claro) (NOVO NA PARTE 4)
+ * 5. A Validação Avançada de Formulários
  * =========================================
  */
 
-// Espera que o HTML esteja todo carregado para começar a executar o JS
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Elemento principal onde o conteúdo das páginas será "injetado"
     const appRoot = document.getElementById('app-root');
 
     // =========================================
     // 1. MÓDULO: TEMPLATES DE PÁGINA
     // =========================================
-    // Aqui guardamos o HTML das nossas "páginas" como strings (templates).
-    // Usamos o acento grave (`) para permitir strings com múltiplas linhas.
+    // (O mesmo da Parte 3 - O HTML das suas páginas está aqui)
 
     const templates = {
 
@@ -32,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <section class="hero">
                 <div class="hero-content">
                     <h1 class="hero-title">A Mudar Vidas, Uma De Cada Vez</h1>
-                    <p class_="hero-subtitle">Junte-se à nossa comunidade de voluntários e faça a diferença. A sua ajuda é o nosso recurso mais valioso.</p>
+                    <p class="hero-subtitle">Junte-se à nossa comunidade de voluntários e faça a diferença. A sua ajuda é o nosso recurso mais valioso.</p>
                     <a href="#projetos" class="btn btn-primary btn-lg">Ver Projetos</a>
                     <a href="#cadastro" class="btn btn-secondary btn-lg">Seja Voluntário</a>
                 </div>
@@ -41,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Secção Sobre (Grid de 12 colunas) -->
             <section id="sobre">
                 <div class="container">
-                    <h2>Sobre a Nossa Organização</h2>
+                    <h2 role="heading" aria-level="2">Sobre a Nossa Organização</h2>
                     <div class="grid-container">
-                        <!-- Coluna de Texto (Ocupa 8 de 12 colunas no desktop) -->
+                        <!-- Coluna de Texto -->
                         <div class="col-lg-8">
                             <p>A "Mãos que Ajudam" é uma organização sem fins lucrativos dedicada a fornecer apoio essencial a comunidades carentes. Fundada em 2010, a nossa missão é combater a pobreza e promover a educação e a saúde através de ações diretas e sustentáveis.</p>
                             <p>Acreditamos no poder da solidariedade. Cada projeto é desenhado com a ajuda da própria comunidade, garantindo que o impacto seja real e duradouro. Contamos com centenas de voluntários que doam o seu tempo e talento para criar um futuro melhor.</p>
@@ -53,10 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <li>+10.000 refeições distribuídas anualmente.</li>
                             </ul>
                         </div>
-                        <!-- Coluna de Imagem (Ocupa 4 de 12 colunas no desktop) -->
+                        <!-- Coluna de Imagem -->
                         <div class="col-lg-4">
                             <img src="assets/images/p1.png" 
-                                 alt="Equipa de voluntários da Mãos que Ajudam" 
+                                 alt="Equipa de voluntários da Mãos que Ajudam em ação." 
                                  class="img-fluid rounded shadow">
                         </div>
                     </div>
@@ -74,9 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 Rua da Solidariedade, Nº 123<br>
                                 Lisboa, Portugal 1000-001<br>
                                 <br>
-                                <!-- Tag 'tel' para ligar em dispositivos móveis -->
                                 <strong>Telefone:</strong> <a href="tel:+351210000000">(+351) 210 000 000</a><br>
-                                <!-- Tag 'mailto' para abrir cliente de email -->
                                 <strong>Email:</strong> <a href="mailto:info@maosqueajudam.pt">info@maosqueajudam.pt</a>
                             </address>
                         </div>
@@ -107,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="col-lg-4 col-md-6">
                             <article class="card">
                                 <img src="assets/images/p2.png" 
-                                     alt="Crianças a estudar num projeto de educação" 
+                                     alt="Crianças a estudar num projeto de educação infantil." 
                                      class="card-img-top">
                                 <div class="card-body">
                                     <h3 class="card-title">Projeto Aprender</h3>
@@ -124,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="col-lg-4 col-md-6">
                             <article class="card">
                                 <img src="assets/images/vanp1.png" 
-                                     alt="Médico voluntário a atender paciente" 
+                                     alt="Médico voluntário a atender paciente na Caravana da Saúde." 
                                      class="card-img-top">
                                 <div class="card-body">
                                     <h3 class="card-title">Caravana da Saúde</h3>
@@ -146,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2>Como Doar</h2>
                     <p>A sua doação, por mais pequena que seja, financia os nossos projetos e permite-nos continuar a ajudar. Somos 100% transparentes com as nossas contas.</p>
                     
-                    <!-- Alert/Badge de Exemplo -->
                     <div class="alert alert-success">
                         <span class="badge">NOVO</span> Pode agora fazer a sua doação via MBWay!
                     </div>
@@ -190,28 +185,26 @@ document.addEventListener('DOMContentLoaded', () => {
             <section id="cadastro">
                 <div class="container">
                     <div class="grid-container">
-                        <!-- Coluna de Texto (Ocupa 5 de 12 colunas) -->
+                        <!-- Coluna de Texto -->
                         <div class="col-lg-5">
                             <h2>Junte-se a Nós</h2>
                             <p>Preencha o formulário ao lado para se registar como voluntário. A nossa equipa entrará em contacto em breve para agendar uma breve sessão de boas-vindas.</p>
                             <p>Se tiver alguma dúvida, não hesite em <a href="mailto:info@maosqueajudam.pt">enviar-nos um email</a>.</p>
                             
-                            <!-- Alert/Badge de Exemplo -->
                             <div class="alert alert-info">
                                 <span class="badge">IMPORTANTE</span> Todos os voluntários devem ter 18 anos ou mais.
                             </div>
                         </div>
 
-                        <!-- Coluna do Formulário (Ocupa 7 de 12 colunas) -->
+                        <!-- Coluna do Formulário -->
                         <div class="col-lg-7">
-                            <!-- O 'id' do formulário é usado pelo JS para validação -->
                             <form id="cadastro-form" class="form-styled" novalidate>
                                 
-                                <!-- Mensagem de erro global (escondida por padrão) -->
-                                <div id="form-error-message" class="alert alert-danger" style="display: none;">
+                                <!-- Mensagem de erro global (Acessibilidade: role="alert") -->
+                                <div id="form-error-message" class="alert alert-danger" style="display: none;" role="alert">
                                     Por favor, corrija os erros no formulário antes de submeter.
                                 </div>
-                                <div id="form-success-message" class="alert alert-success" style="display: none;">
+                                <div id="form-success-message" class="alert alert-success" style="display: none;" role="alert">
                                     Registo submetido com sucesso! Obrigado.
                                 </div>
 
@@ -220,23 +213,22 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <legend>Dados Pessoais</legend>
                                     
                                     <div class="form-group">
+                                        <!-- Acessibilidade: 'for' liga ao 'id' -->
                                         <label for="nome">Nome Completo</label>
-                                        <input type="text" id="nome" name="nome" required minlength="3">
+                                        <input type="text" id="nome" name="nome" required minlength="3" autocomplete="name">
                                         <div class="form-error">O nome é obrigatório (mín. 3 letras).</div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" id="email" name="email" required>
+                                        <input type="email" id="email" name="email" required autocomplete="email">
                                         <div class="form-error">Por favor, insira um email válido.</div>
                                     </div>
 
-                                    <!-- Grid para campos lado a lado -->
                                     <div class="grid-container form-grid">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="cpf">NIF / CPF (PT/BR)</label>
-                                                <!-- O ID é usado pelo JS para a máscara -->
                                                 <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
                                                 <div class="form-error">O NIF/CPF é obrigatório.</div>
                                             </div>
@@ -244,8 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="telefone">Telefone / Telemóvel</label>
-                                                <!-- O ID é usado pelo JS para a máscara -->
-                                                <input type="tel" id="telefone" name="telefone" required placeholder="(+351) 910 000 000">
+                                                <input type="tel" id="telefone" name="telefone" required placeholder="(+351) 910 000 000" autocomplete="tel">
                                                 <div class="form-error">O telefone é obrigatório.</div>
                                             </div>
                                         </div>
@@ -253,25 +244,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                     <div class="form-group">
                                         <label for="nascimento">Data de Nascimento</label>
-                                        <input type="date" id="nascimento" name="nascimento" required>
-                                        <!-- O JS adicionará um erro de idade aqui -->
+                                        <input type="date" id="nascimento" name="nascimento" required autocomplete="bday">
                                         <div class="form-error" id="nascimento-error">A data é obrigatória. Deve ter mais de 18 anos.</div>
                                     </div>
                                     
-                                    <!-- Validação de Consistência (Requisito Parte 3) -->
                                     <div class="grid-container form-grid">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="password">Criar Senha</label>
-                                                <input type="password" id="password" name="password" required minlength="8">
+                                                <input type="password" id="password" name="password" required minlength="8" autocomplete="new-password">
                                                 <div class="form-error">A senha deve ter no mín. 8 caracteres.</div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="confirm-password">Confirmar Senha</label>
-                                                <input type="password" id="confirm-password" name="confirm-password" required>
-                                                <!-- O JS adicionará um erro de consistência aqui -->
+                                                <input type="password" id="confirm-password" name="confirm-password" required autocomplete="new-password">
                                                 <div class="form-error" id="confirm-password-error">As senhas não coincidem.</div>
                                             </div>
                                         </div>
@@ -287,15 +275,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label for="endereco">Rua e Número</label>
-                                                <input type="text" id="endereco" name="endereco" required>
+                                                <input type="text" id="endereco" name="endereco" required autocomplete="street-address">
                                                 <div class="form-error">O endereço é obrigatório.</div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="cep">Código Postal</label>
-                                                <!-- O ID é usado pelo JS para a máscara -->
-                                                <input type="text" id="cep" name="cep" required placeholder="0000-000">
+                                                <input type="text" id="cep" name="cep" required placeholder="0000-000" autocomplete="postal-code">
                                                 <div class="form-error">O Cód. Postal é obrigatório.</div>
                                             </div>
                                         </div>
@@ -305,14 +292,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="cidade">Cidade</label>
-                                                <input type="text" id="cidade" name="cidade" required>
+                                                <input type="text" id="cidade" name="cidade" required autocomplete="address-level2">
                                                 <div class="form-error">A cidade é obrigatória.</div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="estado">Distrito / Estado</label>
-                                                <input type="text" id="estado" name="estado" required>
+                                                <input type="text" id="estado" name="estado" required autocomplete="address-level1">
                                                 <div class="form-error">O distrito/estado é obrigatório.</div>
                                             </div>
                                         </div>
@@ -339,79 +326,56 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================
     // 2. MÓDULO: ROUTER (O "Cérebro" da SPA)
     // =========================================
+    // (O mesmo da Parte 3)
     
-    /**
-     * Função principal do Router.
-     * Lê o "hash" (ex: #projetos) da URL e decide qual template mostrar.
-     */
     function router() {
-        // Pega o "hash" da URL (ex: #projetos)
-        // Se não houver hash, define como #inicio
         let hash = window.location.hash || '#inicio';
+        const activeLinks = document.querySelectorAll('.nav-link.active');
+        activeLinks.forEach(link => link.classList.remove('active'));
 
-        // Lógica para os links do dropdown (ex: #projetos-doar)
         if (hash.startsWith('#projetos-')) {
-            // Se for um link de âncora para projetos, carrega a página de projetos
-            // e depois rola para a secção correta (ex: #doar)
-            
-            // Extrai o ID da âncora (ex: "doar" ou "voluntario")
-            const anchorId = hash.split('-')[1]; // Pega "doar" de "#projetos-doar"
-            
-            // Carrega o template 'projetos'
+            const anchorId = hash.split('-')[1];
             loadTemplate('projetos', () => {
-                // Esta é uma "callback function". Só é executada DEPOIS
-                // do template estar carregado.
-                // Agora que o HTML está na página, podemos rolar para a âncora.
                 const element = document.getElementById(anchorId);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }
             });
-            return; // Para a execução aqui
+            // Ativa o link "Projetos"
+            document.querySelector('.nav-link[href="#projetos"]').classList.add('active');
+            return;
         }
 
-        // Limpa o hash para obter o nome da rota (ex: 'inicio', 'projetos')
-        const route = hash.substring(1); // Remove o '#'
-
-        // Carrega o template correspondente à rota
+        const route = hash.substring(1);
         loadTemplate(route);
+
+        // Ativa o link correspondente
+        const activeLink = document.querySelector(`.nav-link[href="${hash}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
     }
 
-    /**
-     * Carrega uma template dentro do <main id="app-root">
-     * @param {string} templateName - O nome da template (ex: 'inicio')
-     * @param {function} [callback] - (Opcional) Função a ser executada após o carregamento
-     */
     function loadTemplate(templateName, callback) {
         if (!appRoot) {
             console.error('Erro: Elemento <main id="app-root"> não encontrado.');
             return;
         }
-
-        // Procura a template no nosso objeto 'templates'
         const templateHtml = templates[templateName];
 
         if (templateHtml) {
-            // Encontrou! "Injeta" o HTML da template dentro do <main>
             appRoot.innerHTML = templateHtml;
-
-            // Ativa a lógica específica para essa página
             if (templateName === 'cadastro') {
-                initFormValidation(); // Ativa a validação só na pág. de cadastro
+                initFormValidation();
             }
-
-            // Se uma função callback foi passada, executa-a agora
             if (callback && typeof callback === 'function') {
                 callback();
             }
-
         } else {
-            // Não encontrou a rota (ex: #pagina-que-nao-existe)
-            // Carrega a template 'inicio' como padrão
             appRoot.innerHTML = templates['inicio'];
+            document.querySelector('.nav-link[href="#inicio"]').classList.add('active');
         }
 
-        // Fecha o menu mobile (caso esteja aberto) após carregar a nova página
         const mobileNav = document.getElementById('mobile-nav');
         if (mobileNav) {
             mobileNav.classList.remove('active');
@@ -419,87 +383,125 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-// =========================================
+    // =========================================
     // 3. MÓDULO: LÓGICA DE UI (Menu, Modal)
     // =========================================
-    // Este código é o mesmo da Parte 2, mas agora
-    // é executado pela nossa função initApp().
+    // (O mesmo da Parte 3)
     
     function initUIComponents() {
-        
-        // --- Lógica do Menu Hambúrguer ---
         const hamburgerBtn = document.getElementById('hamburger-menu');
         const mobileNav = document.getElementById('mobile-nav');
         const mobileNavCloseBtn = document.getElementById('mobile-nav-close');
 
         if (hamburgerBtn && mobileNav && mobileNavCloseBtn) {
-            // Abrir menu
             hamburgerBtn.addEventListener('click', () => {
                 mobileNav.classList.add('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
             });
-
-            // Fechar menu
             mobileNavCloseBtn.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                hamburgerBtn.focus(); // Acessibilidade: Devolve o foco ao botão
             });
-
-            // Fechar o menu se clicar num link (importante para SPA)
             mobileNav.addEventListener('click', (e) => {
                 if (e.target.classList.contains('nav-link')) {
                     mobileNav.classList.remove('active');
+                    hamburgerBtn.setAttribute('aria-expanded', 'false');
+                    hamburgerBtn.focus();
                 }
             });
         }
 
-        // --- Lógica do Modal de Boas-Vindas ---
         const modal = document.getElementById('welcome-modal');
         const closeModalSpan = document.getElementById('modal-close');
         const closeModalBtn = document.getElementById('modal-close-btn');
 
         if (modal && closeModalSpan && closeModalBtn) {
-            // Mostrar o modal (apenas na primeira visita, usando localStorage)
             if (!localStorage.getItem('modalWasShown')) {
-                // Atraso de 1 segundo para não ser muito intrusivo
                 setTimeout(() => {
                     modal.classList.add('active');
-                    localStorage.setItem('modalWasShown', 'true'); // Marca como visto
+                    localStorage.setItem('modalWasShown', 'true');
                 }, 1000);
             }
-
-            // Fechar no 'X'
-            closeModalSpan.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
-
-            // Fechar no botão "Explorar"
-            closeModalBtn.addEventListener('click', () => {
-                modal.classList.remove('active');
-            });
-
-            // Fechar se clicar fora do modal
+            const closeModal = () => modal.classList.remove('active');
+            closeModalSpan.addEventListener('click', closeModal);
+            closeModalBtn.addEventListener('click', closeModal);
             window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.classList.remove('active');
-                }
+                if (e.target === modal) closeModal();
             });
         }
     }
 
 
     // =========================================
-    // 4. MÓDULO: VALIDAÇÃO DE FORMULÁRIO (Avançado)
+    // 4. MÓDULO: LÓGICA DO TEMA (Modo Escuro)
     // =========================================
-    // Esta função só é chamada pelo Router quando a
-    // template 'cadastro' é carregada.
+    // (NOVO NA PARTE 4)
+    
+    function initThemeSwitcher() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeLabel = document.getElementById('theme-label');
+        const osDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Função para aplicar o tema (luz ou escuro)
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.remove('theme-light');
+                document.body.classList.add('theme-dark');
+                themeToggle.setAttribute('aria-checked', 'true');
+                themeLabel.textContent = 'Modo Claro';
+            } else {
+                document.body.classList.remove('theme-dark');
+                document.body.classList.add('theme-light');
+                themeToggle.setAttribute('aria-checked', 'false');
+                themeLabel.textContent = 'Modo Escuro';
+            }
+        }
+
+        // Função para carregar o tema salvo
+        function loadTheme() {
+            // 1. Verifica se o utilizador já salvou uma preferência
+            let savedTheme = localStorage.getItem('theme');
+            
+            // 2. Se não, verifica a preferência do Sistema Operativo
+            if (!savedTheme) {
+                savedTheme = osDark.matches ? 'dark' : 'light';
+            }
+            
+            applyTheme(savedTheme);
+        }
+
+        // "Ouve" o clique no botão
+        themeToggle.addEventListener('click', () => {
+            let newTheme = document.body.classList.contains('theme-light') ? 'dark' : 'light';
+            applyTheme(newTheme);
+            // Salva a preferência
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // "Ouve" se o utilizador mudar o tema do SO (ex: pôr do sol)
+        osDark.addEventListener('change', (e) => {
+            // Só muda se o utilizador não tiver uma preferência salva
+            if (!localStorage.getItem('theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // Carrega o tema quando a app inicia
+        loadTheme();
+    }
+
+
+    // =========================================
+    // 5. MÓDULO: VALIDAÇÃO DE FORMULÁRIO (Avançado)
+    // =========================================
+    // (O mesmo da Parte 3)
     
     function initFormValidation() {
         const form = document.getElementById('cadastro-form');
-        if (!form) return; // Se não há formulário, para a execução
+        if (!form) return;
 
-        // Seleciona todos os inputs que precisam de validação
         const inputs = form.querySelectorAll('input[required], select[required]');
-        
-        // Seleciona os campos específicos para consistência e máscaras
         const password = document.getElementById('password');
         const confirmPassword = document.getElementById('confirm-password');
         const nascimento = document.getElementById('nascimento');
@@ -507,35 +509,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const telefoneInput = document.getElementById('telefone');
         const cepInput = document.getElementById('cep');
 
-        // Seleciona as mensagens de erro
         const globalErrorMsg = document.getElementById('form-error-message');
         const globalSuccessMsg = document.getElementById('form-success-message');
         const confirmPasswordError = document.getElementById('confirm-password-error');
         const nascimentoError = document.getElementById('nascimento-error');
-
         
-        /**
-         * Aplica uma máscara a um input.
-         * @param {string} mask - O formato da máscara (ex: "000.000.000-00")
-         * @param {HTMLInputElement} inputEl - O elemento input
-         */
         function applyMask(mask, inputEl) {
             if (!inputEl) return;
-            
-            // "Ouve" o evento de digitar (keydown)
             inputEl.addEventListener('keydown', (e) => {
-                // Ignora teclas de controlo (Backspace, Tab, Setas, etc.)
-                if (['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) {
-                    return;
-                }
-
-                // Pega no valor atual e no próximo caracter da máscara
+                if (['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
                 let i = inputEl.value.length;
                 let maskChar = mask[i];
-                
-                // Se o próximo caracter da máscara não for um número ("0"),
-                // e o utilizador não digitou esse caracter,
-                // adiciona-o automaticamente.
                 if (maskChar && maskChar !== '0') {
                     if (e.key !== maskChar) {
                         inputEl.value += maskChar;
@@ -543,104 +527,58 @@ document.addEventListener('DOMContentLoaded', () => {
                         maskChar = mask[i];
                     }
                 }
-                
-                // Impede que o utilizador digite letras onde são esperados números
-                if (maskChar === '0' && !/[0-9]/.test(e.key)) {
-                    e.preventDefault();
-                }
-
-                // Impede que o utilizador digite mais caracteres do que a máscara permite
-                if (i >= mask.length) {
-                    e.preventDefault();
-                }
+                if (maskChar === '0' && !/[0-9]/.test(e.key)) e.preventDefault();
+                if (i >= mask.length) e.preventDefault();
             });
         }
+        applyMask('000.000.000-00', cpfInput);
+        applyMask('0000-000', cepInput);
+        applyMask('(+000) 000 000 000', telefoneInput);
 
-        // Aplica as máscaras
-        applyMask('000.000.000-00', cpfInput); // Máscara de CPF (BR)
-        applyMask('0000-000', cepInput);     // Máscara de CEP (PT)
-        applyMask('(+000) 000 000 000', telefoneInput); // Máscara de Telefone Internacional
-
-
-        /**
-         * Requisito: Verifica a consistência dos dados
-         * (Senha e Idade)
-         */
         function validateConsistency() {
             let isConsistent = true;
-
-            // 1. Verifica se as senhas coincidem
             if (password.value !== confirmPassword.value) {
                 confirmPassword.parentElement.classList.add('invalid');
                 confirmPasswordError.textContent = "As senhas não coincidem.";
                 isConsistent = false;
             } else {
-                // Se corrigiu, remove o erro de consistência
                 if (confirmPassword.value.length > 0) {
                      confirmPassword.parentElement.classList.remove('invalid');
                 }
             }
-
-            // 2. Verifica se é maior de 18 anos
             if (nascimento.value) {
                 const hoje = new Date();
                 const dataNasc = new Date(nascimento.value);
                 let idade = hoje.getFullYear() - dataNasc.getFullYear();
                 const m = hoje.getMonth() - dataNasc.getMonth();
-                
                 if (m < 0 || (m === 0 && hoje.getDate() < dataNasc.getDate())) {
-                    idade--; // Ainda não fez anos este ano
+                    idade--;
                 }
-
                 if (idade < 18) {
                     nascimento.parentElement.classList.add('invalid');
                     nascimentoError.textContent = "Tem de ter pelo menos 18 anos para se registar.";
                     isConsistent = false;
                 } else {
-                    // Se corrigiu, remove o erro de idade
                     nascimento.parentElement.classList.remove('invalid');
-                    nascimentoError.textContent = "A data é obrigatória."; // Volta à msg original
+                    nascimentoError.textContent = "A data é obrigatória.";
                 }
             }
-
             return isConsistent;
         }
 
-
-        /**
-         * "Ouve" o evento 'submit' (clicar no botão)
-         */
         form.addEventListener('submit', (e) => {
-            // 1. Impede o envio real do formulário (que recarrega a página)
             e.preventDefault();
-
-            // 2. Esconde mensagens antigas
             globalErrorMsg.style.display = 'none';
             globalSuccessMsg.style.display = 'none';
-
-            // 3. Valida a consistência (Senhas, Idade)
             const isConsistent = validateConsistency();
-
-            // 4. Valida os campos HTML5 (required, type="email", etc.)
-            // form.checkValidity() é a validação nativa do navegador
             const isValid = form.checkValidity();
 
             if (isValid && isConsistent) {
-                // TUDO VÁLIDO!
-                globalSuccessMsg.style.display = 'block'; // Mostra sucesso
-                form.reset(); // Limpa o formulário
-                
-                // Remove as classes de validação que podem ter ficado
-                inputs.forEach(input => {
-                    input.parentElement.classList.remove('invalid');
-                });
-
+                globalSuccessMsg.style.display = 'block';
+                form.reset();
+                inputs.forEach(input => input.parentElement.classList.remove('invalid'));
             } else {
-                // ERRO!
-                globalErrorMsg.style.display = 'block'; // Mostra erro global
-                
-                // Força a exibição dos erros nativos do HTML5
-                // (Adiciona a classe .invalid aos pais dos campos inválidos)
+                globalErrorMsg.style.display = 'block';
                 inputs.forEach(input => {
                     if (!input.validity.valid) {
                         input.parentElement.classList.add('invalid');
@@ -648,58 +586,37 @@ document.addEventListener('DOMContentLoaded', () => {
                         input.parentElement.classList.remove('invalid');
                     }
                 });
-
-                // Re-valida a consistência para garantir que os erros de senha/idade aparecem
                 validateConsistency();
             }
         });
 
-
-        /**
-         * Validação "em tempo real" (enquanto o utilizador digita)
-         * para dar feedback imediato.
-         */
         inputs.forEach(input => {
-            // "Ouve" o evento 'input' (digitar) e 'blur' (clicar fora)
             input.addEventListener('input', () => {
-                // Valida o campo específico
                 if (!input.validity.valid) {
                     input.parentElement.classList.add('invalid');
                 } else {
                     input.parentElement.classList.remove('invalid');
                 }
-
-                // Se for um dos campos de senha, re-valida a consistência
-                if (input.id === 'password' || input.id === 'confirm-password') {
-                    validateConsistency();
-                }
-                // Se for a data, re-valida a idade
-                if (input.id === 'nascimento') {
-                    validateConsistency();
-                }
+                if (input.id === 'password' || input.id === 'confirm-password') validateConsistency();
+                if (input.id === 'nascimento') validateConsistency();
             });
         });
     }
 
 
     // =========================================
-    // 5. MÓDULO: INICIALIZAÇÃO DA APP (Versão Final)
+    // 6. MÓDULO: INICIALIZAÇÃO DA APP (Versão Final)
     // =========================================
     
-    /**
-     * Função principal que arranca tudo
-     */
     function initApp() {
         // 1. Ativa os componentes de UI globais (Menu, Modal)
-        // (Estes componentes estão no index.html e são sempre necessários)
         initUIComponents();
 
-        // 2. Define os "ouvintes" (event listeners) do Router
-        // Ouve o evento 'hashchange' (quando o utilizador clica num link <a href="#...">)
+        // 2. NOVO: Ativa o seletor de TEMA
+        initThemeSwitcher();
+
+        // 3. Define os "ouvintes" do Router
         window.addEventListener('hashchange', router);
-        
-        // Ouve o evento 'load' (quando a página carrega pela primeira vez)
-        // E dispara o router manualmente pela primeira vez
         window.addEventListener('load', router);
     }
 
