@@ -1,4 +1,4 @@
-# 📋 Projeto ONG-Parte 1: Estrutura HTML
+# 📋 Projeto Parte 1: Estrutura HTML
 
 Este diretório (/parte-1/) contém a primeira entrega do projeto, focada exclusivamente na fundação do site com HTML5 semântico.
 
@@ -20,7 +20,7 @@ Este diretório (/parte-1/) contém a primeira entrega do projeto, focada exclus
 - [X] "Máscaras" HTML5: Uso dos atributos pattern e placeholder para validar o formato de CPF, CEP e Telefone, conforme requisitado para uma entrega "somente HTML".
 
 
-# 📋 Projeto ONG-Parte 2: CSS e Responsividade
+# 📋 Projeto Parte 2: CSS e Responsividade
 
 Esta pasta contém a segunda entrega do projeto, focada na aplicação de CSS3 avançado para transformar a estrutura HTML da Parte 1.
 
@@ -47,7 +47,7 @@ Formulários: O formulário de cadastro está estilizado e usa JavaScript (`main
 Feedback: O site inclui um Modal de "Boas-Vindas" (na index.html) e componentes de `.alert`.
 
 
-# 📋 Projeto Web - Entrega da Parte 3: JavaScript Avançado e SPA
+# 📋 Projeto Web - parte 3: JavaScript Avançado e SPA
 
 Esta pasta contém a terceira entrega do projeto, focada na transformação do site estático (da Parte 2) numa Single Page Application (SPA) dinâmica e interativa, utilizando JavaScript avançado.
 
@@ -104,7 +104,7 @@ MÓDULO: VALIDAÇÃO DE FORMULÁRIO (Avançado) (A nova lógica de validação)
 MÓDULO: INICIALIZAÇÃO DA APP (O código que arranca tudo)
 
 
-# 📋 Projeto Web: Site Solidário "Mãos que Ajudam" (4 Partes)
+# 📋 Projeto Web: Site Solidário "Mãos que Ajudam" (Parte 4)
 
 Este repositório documenta o desenvolvimento de um projeto web completo para uma organização sem fins lucrativos fictícia, "Mãos que Ajudam". O projeto foi construído em 4 partes, evoluindo de um site HTML estático para uma Single Page Application (SPA) dinâmica, responsiva e acessível.
 
